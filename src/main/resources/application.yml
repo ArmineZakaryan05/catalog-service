@@ -25,7 +25,7 @@ spring:
         multiplier: 1.1
   datasource:
     username: postgres
-    password:  root
+    password: root
     url: jdbc:postgresql://localhost:5432/polardb_catalog
     hikari:
       connection-timeout: 2000 #ms
