@@ -11,7 +11,7 @@ on: push
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME:
+  IMAGE_NAME: ArmineZakaryan05/catalog-service
   VERSION: latest
 
 jobs:
