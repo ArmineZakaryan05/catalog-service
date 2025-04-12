@@ -1,6 +1,4 @@
-
 name: Commit Stage
-
 on: push
 
 env:
@@ -11,24 +9,10 @@ env:
 jobs:
   build:
     name: Build and Test
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     permissions:
       contents: read
       security-events: write
-    services:
-          postgres:
-            image: postgres:13
-            env:
-              POSTGRES_USER: postgres
-              POSTGRES_PASSWORD: root
-              POSTGRES_DB: polardb_catalog
-            ports:
-              - 5432:5432
-            options: >-
-              --health-cmd pg_isready
-              --health-interval 10s
-              --health-timeout 5s
-              --health-retries 5
     steps:
       - name:  Checkout source code
         uses: actions/checkout@v4
