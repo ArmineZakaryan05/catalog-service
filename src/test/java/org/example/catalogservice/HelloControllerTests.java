@@ -21,8 +21,7 @@ public class HelloControllerTests {
     public void testGreeting() throws Exception {
         mockMvc.perform((get("/")))
                 .andExpect(status().isOk())
-                .andExpect(content().string("Welcome to our bookshop catalog"));
-        ;
+                .andExpect(content().string("Welcome to the local book catalog!"));
     }
 
 }

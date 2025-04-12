@@ -35,7 +35,7 @@ jobs:
         run: |
          chmod +x gradlew
          ./gradlew build
-          --imageName ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+#          --imageName ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
 
       - name: Code vulnerability scanning
         uses: anchore/scan-action@v3
