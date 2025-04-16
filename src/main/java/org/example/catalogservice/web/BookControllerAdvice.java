@@ -1,17 +1,17 @@
 package org.example.catalogservice.web;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.example.catalogservice.domain.BookAlreadyExistsException;
 import org.example.catalogservice.domain.BookNotFoundException;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-
-import java.util.HashMap;
-import java.util.Map;
-
 
 @RestControllerAdvice
 public class BookControllerAdvice {
