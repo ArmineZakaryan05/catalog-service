@@ -109,4 +109,5 @@ class CatalogServiceApplicationTests {
                         assertThat(errorMessage).isEqualTo("The book with ISBN " + bookIsbn + " was not found.")
                 );
     }
+
 }
