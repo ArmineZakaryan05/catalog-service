@@ -2,6 +2,8 @@ plugins {
     id 'org.springframework.boot' version '3.3.0'
     id 'io.spring.dependency-management' version '1.1.5'
     id 'java'
+    id 'org.flywaydb.flyway' version '10.10.0'
+
 }
 
 group = 'com.polarbookshop'
@@ -33,7 +35,6 @@ dependencies {
     implementation 'org.springframework.retry:spring-retry'
     implementation 'org.flywaydb:flyway-core'
     implementation 'org.flywaydb:flyway-database-postgresql'
-    //./implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
 
     runtimeOnly 'org.postgresql:postgresql'
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
@@ -69,4 +70,9 @@ bootBuildImage {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+flyway {
+    url = 'jdbc:postgresql://localhost:5432/polardb_catalog'
+    user = 'postgres'
+    password = 'root'
 }
