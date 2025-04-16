@@ -1,5 +1,6 @@
 package org.example.catalogservice.demo;
 
+
 import org.example.catalogservice.domain.Book;
 import org.example.catalogservice.domain.BookRepository;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -25,7 +26,6 @@ public class BookDataLoader {
         var book1 = Book.of("1234567891", "Northern Lights", "Lyra Silverstar", 9.90,"Polarsophia" );
         var book2 = Book.of("1234567892", "Polar Journey", "Iorek Polarson", 12.90, "Polarsophia");
         bookRepository.saveAll(List.of(book1, book2));
-
     }
 
 }
