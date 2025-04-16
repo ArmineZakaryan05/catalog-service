@@ -1,12 +1,12 @@
 package org.example.catalogservice.domain;
 
+import java.util.Optional;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.when;
@@ -30,13 +30,13 @@ class BookServiceTest {
                 .hasMessage("A book with ISBN " + bookIsbn + " already exists.");
     }
 
-	@Test
-	void whenBookToReadDoesNotExistThenThrows() {
-		var bookIsbn = "1234561232";
-		when(bookRepository.findByIsbn(bookIsbn)).thenReturn(Optional.empty());
-		assertThatThrownBy(() -> bookService.viewBookDetails(bookIsbn))
-				.isInstanceOf(BookNotFoundException.class)
-				.hasMessage("The book with ISBN " + bookIsbn + " was not found.");
-	}
+    @Test
+    void whenBookToReadDoesNotExistThenThrows() {
+        var bookIsbn = "1234561232";
+        when(bookRepository.findByIsbn(bookIsbn)).thenReturn(Optional.empty());
+        assertThatThrownBy(() -> bookService.viewBookDetails(bookIsbn))
+                .isInstanceOf(BookNotFoundException.class)
+                .hasMessage("The book with ISBN " + bookIsbn + " was not found.");
+    }
 
 }

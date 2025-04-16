@@ -1,15 +1,16 @@
 package org.example.catalogservice.domain;
 
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
 import jakarta.validation.ValidatorFactory;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -39,7 +40,7 @@ class BookValidationTests {
                 .map(ConstraintViolation::getMessage).collect(Collectors.toList());
         assertThat(constraintViolationMessages)
                 .contains("The book ISBN must be defined.")
-				.contains("The ISBN format must be valid.");
+                .contains("The ISBN format must be valid.");
     }
 
     @Test
@@ -48,7 +49,7 @@ class BookValidationTests {
         Set<ConstraintViolation<Book>> violations = validator.validate(book);
         assertThat(violations).hasSize(1);
         assertThat(violations.iterator().next().getMessage())
-				.isEqualTo("The ISBN format must be valid.");
+                .isEqualTo("The ISBN format must be valid.");
     }
 
     @Test

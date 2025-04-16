@@ -12,7 +12,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.annotation.Version;
 
-public record Book(
+public record Book (
 
         @Id
         Long id,
@@ -47,4 +47,5 @@ public record Book(
     public static Book of(String isbn, String title, String author, Double price, String publisher) {
         return new Book(null, isbn, title, author, price, publisher, null, null, 0);
     }
+
 }

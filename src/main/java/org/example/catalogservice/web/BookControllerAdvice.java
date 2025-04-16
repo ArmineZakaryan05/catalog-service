@@ -3,7 +3,7 @@ package org.example.catalogservice.web;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.example.catalogservice.domain.BookAlreadyExistsException;
+import  org.example.catalogservice.domain.BookAlreadyExistsException;
 import org.example.catalogservice.domain.BookNotFoundException;
 
 import org.springframework.http.HttpStatus;
