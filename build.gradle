@@ -2,8 +2,6 @@ plugins {
     id 'org.springframework.boot' version '3.3.0'
     id 'io.spring.dependency-management' version '1.1.5'
     id 'java'
-    id 'org.flywaydb.flyway' version '10.10.0'
-
 }
 
 group = 'com.polarbookshop'
@@ -70,9 +68,4 @@ bootBuildImage {
 
 tasks.named('test') {
     useJUnitPlatform()
-}
-flyway {
-    url = 'jdbc:postgresql://localhost:5432/polardb_catalog'
-    user = 'postgres'
-    password = 'root'
 }
