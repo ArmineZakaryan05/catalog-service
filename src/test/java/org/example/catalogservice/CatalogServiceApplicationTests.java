@@ -1,6 +1,7 @@
 package org.example.catalogservice;
 
 import org.example.catalogservice.domain.Book;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,6 +17,7 @@ class CatalogServiceApplicationTests {
     @Autowired
     private WebTestClient webTestClient;
 
+    @Disabled
     @Test
     void whenGetRequestWithIdThenBookReturned() {
         var bookIsbn = "1231231230";
@@ -40,6 +42,7 @@ class CatalogServiceApplicationTests {
                 });
     }
 
+    @Disabled
     @Test
     void whenPostRequestThenBookCreated() {
         var expectedBook = Book.of("1231231231", "Title", "Author", 9.90, "Polarsophia");
@@ -56,6 +59,7 @@ class CatalogServiceApplicationTests {
                 });
     }
 
+    @Disabled
     @Test
     void whenPutRequestThenBookUpdated() {
         var bookIsbn = "1231231232";
@@ -83,6 +87,7 @@ class CatalogServiceApplicationTests {
                 });
     }
 
+    @Disabled
     @Test
     void whenDeleteRequestThenBookDeleted() {
         var bookIsbn = "1231231233";

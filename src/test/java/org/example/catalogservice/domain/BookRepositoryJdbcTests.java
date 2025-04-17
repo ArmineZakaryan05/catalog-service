@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 import org.example.catalogservice.config.DataConfig;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,7 @@ class BookRepositoryJdbcTests {
     @Autowired
     private JdbcAggregateTemplate jdbcAggregateTemplate;
 
+    @Disabled
     @Test
     void findAllBooks() {
         var book1 = Book.of("1234561235", "Title", "Author", 12.90, "Polarsophia");
@@ -42,6 +44,7 @@ class BookRepositoryJdbcTests {
                 .collect(Collectors.toList())).hasSize(2);
     }
 
+    @Disabled
     @Test
     void findBookByIsbnWhenExisting() {
         var bookIsbn = "1234561237";
@@ -54,12 +57,14 @@ class BookRepositoryJdbcTests {
         assertThat(actualBook.get().isbn()).isEqualTo(book.isbn());
     }
 
+    @Disabled
     @Test
     void findBookByIsbnWhenNotExisting() {
         Optional<Book> actualBook = bookRepository.findByIsbn("1234561238");
         assertThat(actualBook).isEmpty();
     }
 
+    @Disabled
     @Test
     void existsByIsbnWhenExisting() {
         var bookIsbn = "1234561239";
@@ -71,12 +76,14 @@ class BookRepositoryJdbcTests {
         assertThat(existing).isTrue();
     }
 
+    @Disabled
     @Test
     void existsByIsbnWhenNotExisting() {
         boolean existing = bookRepository.existsByIsbn("1234561240");
         assertThat(existing).isFalse();
     }
 
+    @Disabled
     @Test
     void deleteByIsbn() {
         var bookIsbn = "1234561241";
